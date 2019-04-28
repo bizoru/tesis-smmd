@@ -1,0 +1,58 @@
+\chapter{Introducción}
+\section{¿Qué es un centro de computación de alto desempeño?}
+
+El término ``Computación de Alto desempeño'' hace referencia a la distribución de la carga computacional para la solución de problemas científicos haciendo uso de tecnologías que implementan la distribución de carga en un conjunto de recursos computacionales coordinados llamados clusters. De acuerdo a \cite{insidehpc} la computación de alto desempeño generalmente se refiere a la práctica de agregar poder computacional de tal forma que este entrega mucho más rendimiento que cualquier recurso de computo individual con el propósito de solucionar problemas en diversos campos como la ingeniería, la ciencias básicas y la economía.
+\newline
+\newline
+Como cualquier recurso computacional un sistema de computación de alto desempeño debe abordarse desde sus componentes más básicos, en escencia se puede comprender desde los componentes de cualquier sistema de computo en términos de sus elementos de hardware tales como memoria, procesador, almacenamiento y sus elementos de software tales como sistema operativo y aplicaciones de usuario.
+Partiendo desde estos componentes básicos, podemos afirmar que un centro de computación de alto desempeño es la suma de todos los recursos de hardware de diferentes nodos los cuales a través de un circuito lógico construido por el sistema operativo, la comunicación en red y el software componen un único sistema multipropósito, en el cual se pueden procesar grandes volúmenes de información, ejecutar diversos algoritmos y procesamiento de cálculos con gran velocidad y alto rendimiento.
+\\\\
+Para dar idea de la magnitud de recursos de hardware que se pueden conformar en un centro de computo de alto desempeño, para Noviembre de 2018, en los Estados Unidos la supercomputadora número 1 Power System AC922 de IBM tiene 2,397,824 núcleos de procesador y una memoria RAM de 2,801,664 Gigabytes alcanzando un máximo teórico de 200,795 Tera flops por segundo \cite{top500_supercomputer_sites_2019} lo que da cuenta del poder computacional con el que se pueden solucionar diversos problemas de la ciencia y la ingeniería.
+
+\newpage
+
+\section{¿Por que es importante monitorear el desempeño en centros de cómputo de alto desempeño?}
+
+Los centros de cómputo de alto desempeño son recursos totalmente necesarios en entidades académicas, investigativas o comerciales, que requieran el almacenamiento y procesamiento de altos volúmenes de datos que exijan tareas intensivas y complejas.  El potencial de cada uno de esos centros de cómputo se basa en las especificaciones y configuración de su infraestructura y en el buen uso que se haga de ésta por parte de las aplicaciones que se ejecutan allí. La gestión y administración de un centro de cómputo de alto rendimiento y la alta eficiencia con la cual las aplicaciones sacan provechos de la infraestructura depende en gran parte del control continuo que se tenga sobre el uso de los recursos con los cuales se cuenta, sin embargo este es uno de los problemas en los cuales los investigadores invierten mucho tiempo para encontrar herramientas de software que permitan la obtención de métricas básicas, las herramientas usadas son diversas y dependen de las necesidades del actor, de la infraestructura, de la tecnología y del software. Esto conlleva a que tanto la administración del centro como cada uno de los proyectos ejecutados en él instalen, configuren y en algunos casos desarrollen herramientas específicas de monitoreo de métricas de desempeño agregando esfuerzo y tiempo que podría ser utilizado en la resolución del problema científico, ejemplo evidente en el caso de los proyectos de bioinformática desarrollados en el convenio del GICOGE con el Instituto de Genética de la Universidad Nacional.
+
+
+\section{Objetivos}
+El objeto del presente proyecto es el diseño, implementación y evaluación de un sistema modular de adquisición, gestión y visualización web de métricas de rendimiento para centros de cómputo de alto desempeño. Métricas tales como: uso de CPU, utilización de memoria RAM, espacio en disco, conteo de procesos, tráfico de red, operaciones de I/O en disco, cantidad de hilos, uso de memoria en GPU serán gestionadas mediante un motor de búsqueda como Elasticsearch y serán visualizadas haciendo uso de herramientas como Kibana. El sistema  tendrá un diseño de naturaleza modular con el fin de adaptarse a las diferentes naturalezas de los centros de cómputo de alto desempeño y a su continuo crecimiento e inclusión de nuevas tecnologías. La implementación realizada será un caso de estudio específicamente para el CECAD.
+Crear un modelo de sistema modular para la adquisición, gestión y visualización web para métricas de desempeño en centros de cómputo de alto rendimiento.
+Construir una implementación del sistema modelado para el caso específico del CECAD.
+Evaluar el sistema implementado mediante su uso por parte de los proyectos vigentes en el CECAD.
+Generar proyecciones y prospectivas de uso e innovación (mejoras, optimización y transformación) del sistema.
+
+\section{Pregunta problema e hipotésis de la investigación}
+¿Qué especificaciones debe cumplir un sistema modular de adquisición, gestión y visualización web de métricas de desempeño para centros de cómputo de alto rendimiento?
+\\\\
+Un sistema modular de adquisición, gestión y visualización, debe ser capaz de utilizarse de una manera sencilla y amigable, en donde el investigador no tenga la necesidad de invertir el tiempo en encontrar la combinación de herramientas y tecnologías que le permitan conocer métricas básicas necesarias para la medición y comparación de rendimiento en el procesamiento de datos y ejecución de algoritmos. \\El sistema debe ser capaz de entregar métricas básicas tales como el uso de procesador, memoria, almacenamiento en una interfaz sencilla y de fácil acceso.
+Debido los interes particulares entre quienes administran los centros de cómputo de alto rendimiento y quienes hacen uso de ellos, es necesario que la herramienta de adquisición, gestión y visualización sea independiente de tal manera que se pueda instalar, configurar y ejecutar con los ajustes que requiera el investigador sin la necesidad de interefir con el software de administración del centro computo, permitiendole al investigador trabajar de manera autonoma y aislada dando espacio para que diversos proyectos se ejecuten en el mismo centro de computo sin interferencia alguna.
+
+\newpage
+
+\section{Como se organiza esta investigación}
+
+El proyecto esta planteado en tres fases principales las cuales son: Diseño, Implemetación y Evaluación, dichas fases están organizadas en cápitulos donde se describen las actividades y los modelos que componen el sistema de monitoreo y administración de métricas de desempeño.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c m{10cm} c}
+\toprule
+\textbf{Fase} & \centering{\textbf{Descripción}} & \textbf{Capítulo}\\[3ex]
+\midrule
+\multirow{3}{*}{Diseño} & Estado del arte sobre monitoreo en centros de cómputo de alto desempeño & 1\\
+ & Definición de tecnologías y metodología  & 2\\
+ & Diseño de la arquitectura general del sistema. & 3\\
+\hdashline
+\multirow{3}{*}{Implementación} & Configuración del entorno & 4 \\
+ & Instalación &  4.1\\
+ & Ejecución de módulos y verificación & \\
+\hdashline
+\multirow{3}{*}{Evaluación} & Verificación del sistema y métricas & \multirow{3}{*}{1}\\
+ & Conclusiones & \\
+ & Aportes y divulgación & \\
+\bottomrule
+\end{tabular}
+\caption{\label{tab:organizacion-proyecto} Organización de la Investigación}
+\end{table}

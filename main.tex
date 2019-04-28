@@ -1,0 +1,91 @@
+\documentclass[12pt,spanish,fleqn,openany,letterpaper,pagesize]{scrbook}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[colorlinks,urlcolor=blue,citecolor=black]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{epsfig}
+\usepackage{epic}
+\usepackage{eepic}
+\usepackage{amsmath}
+\usepackage{threeparttable}
+\usepackage{amscd}
+\usepackage{here}
+\usepackage{graphicx}
+\usepackage{lscape}
+\usepackage{tabularx}
+\usepackage{subfigure}
+\usepackage{longtable}
+\usepackage{apacite}
+\usepackage{rotating}
+\usepackage{todonotes}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{arydshln}
+\usepackage{color,soul}
+\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{rotating}
+\usepackage[toc]{glossaries}
+\makeglossaries
+\renewcommand{\theequation}{\thechapter-\arabic{equation}}
+\renewcommand{\thefigure}{\textbf{\thechapter-\arabic{figure}}}
+\renewcommand{\thetable}{\textbf{\thechapter-\arabic{table}}}
+\pagestyle{fancyplain}%\addtolength{\headwidth}{\marginparwidth}
+\textheight22.5cm \topmargin0cm \textwidth16.5cm
+\oddsidemargin0.5cm \evensidemargin-0.5cm%
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\; #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\; #1}}
+\lhead[\fancyplain{}{\thepage}]{\fancyplain{}{\rightmark}}
+\rhead[\fancyplain{}{\leftmark}]{\fancyplain{}{\thepage}}
+\fancyfoot{}
+\thispagestyle{fancy}%
+
+\addtolength{\headwidth}{0cm}
+\unitlength1mm %Define la unidad LE para Figuras
+\mathindent0cm %Define la distancia de las formulas al texto,  fleqn las descentra
+\marginparwidth0cm
+\parindent0cm %Define la distancia de la primera linea de un parrafo a la margen
+
+
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\let\PBS=\PreserveBackslash
+\input{glosario}
+
+\renewcommand{\baselinestretch}{1.1}
+\newcommand{\arr}[1]{\raisebox{1.5ex}[0cm][0cm]{#1}}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={SMMD},
+    bookmarks=true,
+    pdfpagemode=FullScreen,
+}
+
+\begin{document}
+\pagenumbering{roman}
+\include{titulo/titulo}
+\renewcommand{\tablename}{\textbf{Tabla}}
+\renewcommand{\figurename}{\textbf{Figura}}
+\renewcommand{\listtablename}{Lista de Tablas}
+\renewcommand{\listfigurename}{Lista de Figuras}
+\renewcommand{\contentsname}{Contenido}
+\tableofcontents
+\listoffigures
+\listoftables
+\pagenumbering{arabic}
+\include{capitulos/capitulo1}
+\include{capitulos/capitulo2}
+\include{capitulos/capitulo3}
+\include{capitulos/capitulo4}
+\include{capitulos/capitulo5}
+\include{capitulos/capitulo6}
+\include{capitulos/capitulo7}
+\include{capitulos/capitulo8}
+\include{capitulos/capitulo9}
+\printglossaries
+\bibliographystyle{apacite}
+\bibliography{referencias/indice}
+\end{document}
